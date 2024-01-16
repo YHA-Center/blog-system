@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="" class="btn btn-primary btn-sm btn-icon-split mb-3">
+<a href="{{ route('PostCreate') }}" class="btn btn-primary btn-sm btn-icon-split mb-3">
     <span class="icon text-white-50">
         <i class="fas fa-plus"></i>
     </span>

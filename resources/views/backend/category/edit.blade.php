@@ -21,7 +21,7 @@
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>
-                            <span class="text">Create</span>
+                            <span class="text">Update</span>
                         </button>
                     </div>
                 </form>
