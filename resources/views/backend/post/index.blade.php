@@ -34,23 +34,31 @@
                         <td>{{ $post->Category->name }}</td>
                         <td>{{ date('d/m/Y', strtotime($post->created_at)) }}</td>
                         {{-- buttons --}}
-                        <td>
-                            <a href="" class="btn btn-primary btn-sm btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-edit"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                            </a>
-                            <form action="" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger btn-sm btn-icon-split">
+                        <td class="">
+                            <div class="d-flex">
+                                <a href="" class="btn btn-success btn-sm btn-icon-split">
                                     <span class="icon text-white-50">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="fas fa-eye"></i>
                                     </span>
-                                    <span class="text">Delete</span>
-                                </button>
-                            </form>
+                                    <span class="text">Detail</span>
+                                </a>
+                                <a href="" class="btn btn-primary btn-sm btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-edit"></i>
+                                    </span>
+                                    <span class="text">Edit</span>
+                                </a>
+                                <form action="" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger btn-sm btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span class="text">Delete</span>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

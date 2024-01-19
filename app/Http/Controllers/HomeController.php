@@ -12,4 +12,8 @@ class HomeController extends Controller
         $categories = Category::all();                                                    
         return view('frontend.index', compact('categories'));
     }
+
+    public function index(){
+        return view('auth.login');
+    }
 }
