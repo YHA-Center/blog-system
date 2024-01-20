@@ -17,6 +17,9 @@ Route::get('posts/list', [PostController::class, 'index'])->name('PostList');
 Route::get('posts/detail/{id}', [PostController::class, 'detail'])->name('PostDetail');
 Route::get('posts/create', [PostController::class, 'create'])->name('PostCreate');
 Route::post('posts/store', [PostController::class, 'post'])->name('PostStore');
+Route::get('posts/edit/{id}', [PostController::class, 'edit'])->name('PostEdit');
+Route::post('posts/update/{id}', [PostController::class, 'update'])->name('PostUpdate');
+Route::delete('posts/delete/{id}', [PostController::class, 'destory'])->name('PostDelete');
 
 // frontend
 // home sectoin

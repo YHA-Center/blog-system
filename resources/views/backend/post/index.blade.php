@@ -36,21 +36,21 @@
                         {{-- buttons --}}
                         <td class="">
                             <div class="d-flex">
-                                <a href="" class="btn btn-success btn-sm btn-icon-split">
+                                <a href="{{ route('PostDetail', $post->id) }}" class="btn btn-success btn-sm btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-eye"></i>
                                     </span>
                                     <span class="text">Detail</span>
                                 </a>
-                                <a href="" class="btn btn-primary btn-sm btn-icon-split">
+                                <a href="{{ route('PostEdit', $post->id) }}" class="btn btn-primary btn-sm btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-edit"></i>
                                     </span>
                                     <span class="text">Edit</span>
                                 </a>
-                                <form action="" method="POST">
+                                <form action="{{ route('PostDelete', $post->id) }}" method="POST">
                                     @csrf
-                                    @method('delete')
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
@@ -67,7 +67,7 @@
         </div>
     </div>
     {{-- Pagination  --}}
-    {{-- {{ $posts->appends(request()->query())->links() }} --}}
+    {{ $posts->appends(request()->query())->links() }}
 </div>
 
 @endsection
