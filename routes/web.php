@@ -24,6 +24,7 @@ Route::delete('posts/delete/{id}', [PostController::class, 'destory'])->name('Po
 // frontend
 // home sectoin
 Route::get('/', [HomeController::class, 'home'])->name('HomePage');
+Route::get('detail/{id}', [HomeController::class, 'detail'])->name('DetailPage');
 
 Auth::routes();
 

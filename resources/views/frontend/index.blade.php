@@ -3,12 +3,7 @@
 @section('content')
 
 <!-- Page header with logo and tagline-->
-<header class="py-5 bg-light border-bottom mb-4">
-    <div class="container">
-        <div class="text-center my-5">
-            <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-        </div>
-    </div>
+<header class="bg-light border-bottom mb-4">
 </header>
 <!-- Page content-->
 <div class="container">
@@ -26,7 +21,7 @@
                     <p class="card-text">
                         <?= Str::words($feature_post->description, 20, '...') ?>
                     </p>
-                    <a class="btn btn-primary" href="">Read more →</a>
+                    <a class="btn btn-primary" href="{{ route('DetailPage', $feature_post->id) }}">Read more →</a>
                 </div>
             </div>
             <!-- Nested row for non-featured blog posts-->
@@ -42,25 +37,14 @@
                             <p class="card-text">
                                 <?= Str::words($post->description, 20, '...') ?>
                             </p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a class="btn btn-primary" href="{{ route('DetailPage', $post->id) }}">Read more →</a>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
             <!-- Pagination-->
-            <nav aria-label="Pagination">
-                <hr class="my-0" />
-                <ul class="pagination justify-content-center my-4">
-                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">15</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">Older</a></li>
-                </ul>
-            </nav>
+            {{ $posts->links() }}
         </div>
         <!-- Side widgets-->
         <div class="col-lg-4">
