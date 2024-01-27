@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -23,7 +24,7 @@ class LoginController extends Controller
 
     protected $redirectTo = '/home';
 
-    
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -39,8 +40,8 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
         if(Auth::attempt($credentails)){
-            $request->session()->regenerate(); 
-            return redirect()->intended('posts/list');
+            $request->session()->regenerate();
+            return redirect()->route('PostList');
         }
 
         return back()->withErrors([

@@ -71,21 +71,23 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#setting"
                     aria-expanded="true" aria-controls="setting">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Setting</span>
+                    <span class="mr-2 d-none d-lg-inline text-light small">
+                        {{ Auth::user()->name }}
+                    </span>
+                    <img src="" alt="">
                 </a>
                 <div id="setting" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('PostList') }}">Profile</a>
+                        <a class="collapse-item" href="{{ route('AdminProfile') }}">Profile</a>
                     </div>
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('AdminLogout') }}">Logout</a>
                     </div>
                 </div>
             </li>
-            
 
-            
+
+
 
         </ul>
         <!-- End of Sidebar -->
