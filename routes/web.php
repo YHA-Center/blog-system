@@ -29,7 +29,7 @@ Route::get('detail/{id}', [HomeController::class, 'detail'])->name('DetailPage')
 
 Auth::routes();
 
-// login and register section
+// login and register section (admin)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin/login', [LoginController::class, 'showLogin'])->name('ShowAdminLogin');
 Route::post('admin/login',[LoginController::class, 'login'])->name('AdminLogin');
@@ -38,3 +38,7 @@ Route::get('admin/logout', [LoginController::class, 'logout'])->name('AdminLogou
 // profile
 Route::get('admin/profile', [UserController::class, 'showAdminProfile'])->name('AdminProfile');
 Route::post('admin/profile/update', [UserController::class, 'updateAdminProfile'])->name('UpdateAdminProfile');
+
+// user login and register page
+Route::get('user/login', [LoginController::class, 'showUserLogin'])->name('ShowUserLogin');
+Route::get('user/register', [LoginController::class, 'showUserRegister'])->name('ShowUserRegister');
