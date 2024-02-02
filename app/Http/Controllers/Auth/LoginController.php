@@ -54,4 +54,14 @@ class LoginController extends Controller
         Auth::logout();
         return redirect()->route('ShowAdminLogin');
     }
+
+    // user login page
+    public function showUserLogin(){
+        return view('frontend.login');
+    }
+
+    // user register page
+    public function showUserRegister(){
+        return view('frontend.register');
+    }
 }

@@ -41,4 +41,5 @@ Route::post('admin/profile/update', [UserController::class, 'updateAdminProfile'
 
 // user login and register page
 Route::get('user/login', [LoginController::class, 'showUserLogin'])->name('ShowUserLogin');
+Route::post('user/login', [LoginController::class, 'showUserLogin'])->name('UserLogin');
 Route::get('user/register', [LoginController::class, 'showUserRegister'])->name('ShowUserRegister');
